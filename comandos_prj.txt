@@ -1,0 +1,5 @@
+iniciar projeto
+npx create-react-app nome-do-projeto
+
+instalar libs
+npm install styled-components
