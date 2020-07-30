@@ -5,3 +5,6 @@ instalar libs
 npm install styled-components
 npm install react-router-dom
 npm install react-slick
+
+
+pacote React dev tools
