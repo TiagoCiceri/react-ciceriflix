@@ -4,6 +4,8 @@ import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
 import Container from '../../../components/Container';
+import useForm from '../../../hooks/useForms';
+import config from '../../../config';
 import '../Cadastro.css';
 
 function CadastroCategoria(){
@@ -13,42 +15,27 @@ function CadastroCategoria(){
         cor: '',
     }
 
+    const { clearForm, dados, handleChange } = useForm(dadosCategoria);
+
     const [categorias, setCategorias] =  useState([]);
-    const [dados, setDados] = useState(dadosCategoria);
-
-    function setValue(chave, valor){
-        setDados({
-            ...dados,
-            [chave]: valor,
-        })
-    }
-
-    function handleChange(e){
-        setValue(e.target.getAttribute('name'), 
-                 e.target.value);        
-    }
 
     function handleSubmit(e){
         e.preventDefault();
         setCategorias([...categorias, dados]);
-        setValue(dadosCategoria);
+        clearForm();
     }
 
-    useEffect(() => {
-        if (window.location.href.includes('localhost')){
-            const URL = 'http://localhost:8080/categorias';
-
-            fetch(URL)
-                .then(async (respostaServer) => {
-                    if (respostaServer.ok){
-                        const dadosConvertidos = await respostaServer.json();
-                        console.log(dadosConvertidos);
-                        setCategorias(dadosConvertidos);
-                        return;
-                    }
-                    throw new Error('Não foi possível pegar os dados');
-                })
-        }
+    useEffect(() => {        
+        fetch(config.URL_BACKEND+'/categorias')
+            .then(async (respostaServer) => {
+                if (respostaServer.ok){
+                    const dadosConvertidos = await respostaServer.json();
+                    console.log(dadosConvertidos);
+                    setCategorias(dadosConvertidos);
+                    return;
+                }
+                throw new Error('Não foi possível pegar os dados');
+            })
     },[])
 
     return(
