@@ -15,13 +15,15 @@ const Main = styled.main`
     `}
 `;
 
-function PageDefault({ children, paddingAll }){
+function PageDefault({ children, paddingAll, linkButton, textButton }){
     return(
         <>
-            <Menu />
+            <Menu linkButton={linkButton} textButton={textButton} />
+
                 <Main paddingAll={paddingAll}>
                     {children}
                 </Main>
+
             <Footer />
         </>
     )

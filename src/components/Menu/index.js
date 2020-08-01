@@ -5,15 +5,18 @@ import './Menu.css';
 import Button from '../Button';
 //import ButtonLink from '../components/ButtonLink';
 
-function Menu(){
+function Menu({ linkButton, textButton }){
     return (
         <nav className="Menu">
             <Link to="/">
                 <img className="Logo" src={Logo} alt="CiceriFlix logo" />
             </Link>
 
-            <Button as={Link} className="ButtonLink" to="/cadastro/video">
-                Novo Vídeo
+            <Button 
+             as={Link} 
+             className="ButtonLink" 
+             to={linkButton}>
+                {textButton}
             </Button>
         </nav>
     )

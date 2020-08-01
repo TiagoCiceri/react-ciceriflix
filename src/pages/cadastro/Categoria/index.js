@@ -39,7 +39,7 @@ function CadastroCategoria(){
     },[])
 
     return(
-        <PageDefault>
+        <PageDefault paddingAll={0} linkButton="/cadastro/video" textButton="Novo Vídeo">
             <Container>
                 <div className="Row">
                     <div className="Column"> 
@@ -88,10 +88,10 @@ function CadastroCategoria(){
                 </div>
             </Container>
             
-            <Link to="/">
+{/*             <Link to="/">
                 Voltar para Home.
             </Link>
-
+ */}
         </PageDefault>
     )
 };
