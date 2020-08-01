@@ -24,8 +24,10 @@
   * React
 
 ### :hammer_and_wrench: Ferramentas utilizadas
-  * VSCode
-  * Git / GitHub
+  * VSCode ( editor de código )
+  * Git / GitHub ( controle de versão )
+  * Vercel.com ( platforma integrada ao GitHub para gerar o Biuld do projeto e deixa-lo no ar com conta Free. Vamos utilizar para rodar o Front-End )
+  * Heroku.com ( plataforma em nuvem como um serviço que suporta várias linguagens de programação. Vamos utilizar para JSON Server funcionar com Back-End )
 
 
 ### :point_right: Como rodar o projeto?

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-//import Menu from '../../components/Menu';
 import BannerMain from "../../components/BannerMain";
 import Carousel from '../../components/Carousel';
 import PageDefault from '../../components/PageDefault';
@@ -20,7 +19,7 @@ function Home() {
   },[]);
 
   return (
-    //<div style={{ background: "#141414" }} >
+    
     <PageDefault paddingAll={0} linkButton="/cadastro/video" textButton="Novo Vídeo" >
       {dadosIniciais.length === 0 && (<div>Loading...</div>)}  
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
@@ -15,7 +15,7 @@ function CadastroVideo() {
     const categoryTitles = categorias.map(({ titulo }) => titulo);
     const { dados, handleChange } = useForm({});
 
-    function handleSubmit(e) {
+    function handleSubmit(e) { 
         e.preventDefault();
 
         const categoriaEscolhida = categorias.find((categoria) => categoria.titulo === dados.categoria);
@@ -70,10 +70,6 @@ function CadastroVideo() {
 
                 </form>
             </Container>
-            {/*             <br />
-            <Link to="/cadastro/categoria">
-                Cadastrar Categoria.
-            </Link> */}
 
         </PageDefault>
     )
